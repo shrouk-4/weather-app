@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body class="bg-slate-900 text-white min-h-screen flex">
+
+  <!-- Sidebar -->
+  <aside class="w-20 bg-slate-800 flex flex-col items-center py-4 space-y-4">
+    <!-- Logo -->
+    <div class="w-12 h-12">
+      <img src="images/logo.png" alt="Logo" class="w-full h-full object-contain">
+    </div>
+
+    <!-- Home -->
+    <a href="index.html" class="text-2xl hover:text-blue-400">
+      <i class="fa-solid fa-house "></i>
+      <p class="text-sm text-grey-400 ">Home</p>
+      </a>
+      
+    <!-- Cities -->
+    <a href="cities.html" class="text-2xl hover:text-blue-400">
+      <i class="fa-solid fa-city"></i>
+      <p class="text-sm text-grey-400">Cities</p>
+    </a>
+      
+    <!-- Map -->
+    <a href="map.html" class="text-2xl hover:text-blue-400">
+      <i class="fa-solid fa-map"></i>
+      <p class="text-sm text-grey-400">Map</p>
+    </a>
+      
+    <!-- Settings -->
+    <button class="text-2xl hover:text-blue-400">
+      <i class="fa-solid fa-gear"></i>
+      <p class="text-sm text-grey-400">Settings</p>
+    </button>
+  </aside>
+
+
+  <!-- Main Content -->
+  <main class="flex-1 p-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+    <!-- Left Section -->
+    <section class="lg:col-span-2 flex flex-col space-y-6">
+    
+      <!-- Search -->
+      <div class="bg-slate-800 rounded-2xl p-4">
+        <input type="text" placeholder="Search for city..."
+          class="w-full p-3 bg-slate-700 rounded-xl outline-none" />
+      </div>
+      
+      <!-- 3 Cities stacked -->
+      <p class="text-gray-400 text-sm">LATEST SEARCHES</p>
+      <div class="flex flex-col space-y-4">
+        <div class="bg-slate-800 rounded-2xl p-4 flex items-center justify-between 
+                    hover:bg-slate-700 hover:scale-100 transition-all duration-300 cursor-pointer">
+          <!-- Left: Image -->
+          <div class="flex items-center space-x-4">
+            <div><img src="images/sunny.png" alt="Sunny"></div>
+            
+            <div>
+              <p class="font-semibold text-2xl">Madrid</p>
+              <p class="text-md text-gray-400">10:45 AM</p>
+            </div>
+          </div>
+          <!-- Right: Temp -->
+          <p class="text-3xl font-bold">31°C</p>
+        </div>
+
+        <div class="bg-slate-800 rounded-2xl p-4 flex items-center justify-between 
+                    hover:bg-slate-700 hover:scale-100 transition-all duration-300 cursor-pointer">
+          <div class="flex items-center space-x-4">
+            <div><img src="images/rain.png" ></div>
+            <div>
+              <p class="font-semibold text-2xl">Japan</p>
+              <p class="text-md text-gray-400">10:45 AM</p>
+            </div>
+          </div>
+          <p class="text-3xl font-bold">10°C</p>
+        </div>
+
+        <div class="bg-slate-800 rounded-2xl p-4 flex items-center justify-between 
+                    hover:bg-slate-700 hover:scale-100 transition-all duration-300 cursor-pointer">
+          <div class="flex items-center space-x-4">
+            <div><img src="images/sunny.png" alt="Sunny"></div>
+            <div>
+              <p class="font-semibold text-2xl">Cairo</p>
+              <p class="text-md text-gray-400">11:45 AM</p>
+            </div>
+          </div>
+          <p class="text-3xl font-bold">28°C</p>
+        </div>
+      </div>
+
+      <!-- 2 Cities (squares) -->
+      <p class="text-gray-400 text-sm">MORE SUGGESTIONS</p>
+      <div class="flex gap-4">
+      <!-- London Card -->
+      <div class="bg-slate-800 rounded-2xl p-4 flex flex-col items-center 
+            hover:bg-slate-700 hover:scale-105 transition-all duration-300 cursor-pointer 
+            w-40 h-40">
+      <p class="font-semibold text-lg">London</p>
+      <img src="images/mist.png" alt="Sunny" class="w-12 h-12">
+      <p class="text-md font-bold">21°C</p>
+      </div>
+
+<!-- Paris Card -->
+  <div class="bg-slate-800 rounded-2xl p-4 flex flex-col items-center 
+            hover:bg-slate-700 hover:scale-105 transition-all duration-300 cursor-pointer 
+            w-40 h-40">
+  <p class="font-semibold text-lg">Paris</p>
+  <img src="images/cloudy.png" alt="Cloudy" class="w-12 h-12">
+  <p class="text-md font-bold">19°C</p>
+  </div>
+      </div>
+  </section>
+
+
+    <!-- Right Section -->
+    <section class="lg:col-span-1 flex flex-col space-y-5">
+
+      <!-- Current Weather Card -->
+      <div class="bg-slate-800 rounded-2xl p-6 flex items-center justify-between">
+        <!-- Left side: Text info -->
+        <div>
+          <h2 class="text-3xl font-bold pb-2">Seoul</h2>
+          <p class="text-gray-400">Thursday, 28 Aug</p>
+          <p class="text-7xl font-bold m-2">33°</p>
+        </div>
+
+        <!-- Right side: Icon -->
+        <img src="images/cloud.png" class="w-32 h-32" />
+      </div>
+
+
+      <!-- Today's Forecast -->
+      <div class="bg-slate-800 rounded-2xl p-6">
+        <h2 class="text-lg font-semibold mb-4">Today's Forecast</h2>
+        <div class="flex justify-between text-center">
+          <div>
+            <p class="text-sm font-semibold">6:00 AM</p>
+            <div><img src="images/cloudy.png"></div>
+            <p class="font-bold">25°C</p>
+          </div>
+          <div>
+            <p class="text-sm font-semibold">9:00 AM</p>
+            <div><img src="images/mist.png"></div>
+            <p class="font-bold">28°C</p>
+          </div>
+          <div>
+            <p class="text-sm font-semibold">12:00 PM</p>
+            <div><img src="images/sunny.png"></div>
+            <p class="font-bold">33°C</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3-Day Forecast -->
+      <div class="bg-slate-800 rounded-2xl p-6">
+        <h2 class="text-lg font-semibold mb-4">3-Day Forecast</h2>
+        <div class="space-y-3">
+          <div class="flex justify-between">
+            <span>Friday</span>
+            <div><img src="images/minicloudy.png"></div>
+            <span>36° / 22°</span>
+          </div>
+          <div class="flex justify-between">
+            <span>Saturday</span>
+            <div><img src="images/minirain.png"></div>
+            <span>37° / 21°</span>
+          </div>
+          <div class="flex justify-between">
+            <span>Sunday</span>
+            <div><img src="images/minisunny.png"></div>
+            <span>37° / 21°</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+</body>
+</html>

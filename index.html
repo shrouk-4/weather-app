@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App - Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body class="bg-slate-900 text-white h-screen flex">
+
+  <!-- Sidebar -->
+  <aside class="w-20 bg-slate-800 flex flex-col items-center py-4 space-y-4">
+    <!-- Logo -->
+    <div class="w-12 h-12">
+      <img src="images/logo.png" alt="Logo" class="w-full h-full object-contain">
+    </div>
+
+    <!-- Home -->
+    <a href="index.html" class="text-2xl hover:text-blue-400">
+      <i class="fa-solid fa-house "></i>
+      <p class="text-sm text-grey-400 ">Home</p>
+      </a>
+      
+    <!-- Cities -->
+    <a href="cities.html" class="text-2xl hover:text-blue-400">
+      <i class="fa-solid fa-city"></i>
+      <p class="text-sm text-grey-400">Cities</p>
+    </a>
+      
+    <!-- Map -->
+    <a href="map.html" class="text-2xl hover:text-blue-400">
+      <i class="fa-solid fa-map"></i>
+      <p class="text-sm text-grey-400">Map</p>
+    </a>
+      
+    <!-- Settings -->
+    <button class="text-2xl hover:text-blue-400">
+      <i class="fa-solid fa-gear"></i>
+      <p class="text-sm text-grey-400">Settings</p>
+    </button>
+  </aside>
+
+
+
+  <!-- Main Content -->
+  <main class="flex-1 p-4 grid grid-cols-3 gap-3">
+
+    <!-- Left Section -->
+    <section class="col-span-2 flex flex-col space-y-6">
+
+      <!-- Search -->
+      <div class="bg-slate-800 rounded-2xl p-4">
+        <input id="cityInput" type="text" placeholder="Search for city..."
+          class="w-full p-3 bg-slate-700 rounded-xl outline-none" />
+          
+      </div>
+
+      <!-- Current Weather Card -->
+<div class="bg-slate-800 rounded-2xl p-6 flex items-center justify-between">
+  <!-- Left side: Text info -->
+  <div>
+    <h2 id ="cityName" class="text-3xl font-bold pb-2">Seoul</h2>
+    <p id ="date" class="text-gray-400">Thursday, 28 Aug</p>
+    <p id ="temp" class="text-7xl font-bold m-2">33°</p>
+  </div>
+
+  <!-- Right side: Icon -->
+  <img id="icon"src="images/sun.png" class="w-32 h-32" />
+</div>
+
+      <!-- Hourly Forecast -->
+      <div class="bg-slate-800 rounded-2xl p-6">
+        <h2 class="text-lg font-semibold mb-4">Today's Forecast</h2>
+        <div class="flex justify-between text-center">
+          <div>
+            <p class="text-sm">6 AM</p>
+            <img src="images/sunny.png" class="w-8 h-8 mx-auto">
+            <p>25°</p>
+          </div>
+          <div>
+            <p class="text-sm">9 AM</p>
+            <img src="images/mist.png" class="w-8 h-8 mx-auto">
+            <p>28°</p>
+          </div>
+          <div>
+            <p class="text-sm">12 PM</p>
+            <img src="images/sunny.png" class="w-8 h-8 mx-auto">
+            <p>33°</p>
+          </div>
+          <div>
+            <p class="text-sm">3 PM</p>
+            <img src="images/sunny.png" class="w-8 h-8 mx-auto">
+            <p>34°</p>
+          </div>
+          <div>
+            <p class="text-sm">6 PM</p>
+            <img src="images/mist.png" class="w-8 h-8 mx-auto">
+            <p>30°</p>
+          </div>
+          <div>
+            <p class="text-sm">9 PM</p>
+            <img src="images/night.png" class="w-8 h-8 mx-auto">
+            <p>27°</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Air Conditions -->
+      <div class="bg-slate-800 rounded-2xl p-6 mb-4">
+        <h2 class="text-lg font-semibold mb-4">Air Conditions</h2>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="flex items-center space-x-3">
+            <i class="fa-solid fa-temperature-half text-blue-400 text-xl"></i>
+            <div>
+              <p class="text-gray-400 text-sm">Real Feel</p>
+              <p class="text-xl font-bold">36°</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-3">
+            <i class="fa-solid fa-wind text-blue-400 text-xl"></i>
+            <div>
+              <p class="text-gray-400 text-sm">Wind</p>
+              <p class="text-xl font-bold">12 km/h</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-3">
+            <i class="fa-solid fa-droplet text-blue-400 text-xl"></i>
+            <div>
+              <p class="text-gray-400 text-sm">Humidity</p>
+              <p class="text-xl font-bold">48%</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-3">
+            <i class="fa-solid fa-sun text-blue-400 text-xl"></i>
+            <div>
+              <p class="text-gray-400 text-sm">UV Index</p>
+              <p class="text-xl font-bold">4</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  <!-- Right Sidebar -->
+<div class="w-100 m-3 flex flex-col gap-6">
+
+  <!-- 7 Days Forecast -->
+  <div class="bg-slate-800 rounded-2xl p-4">
+    <h3 class="text-xl font-bold mb-4 text-white">7 Days Forecast</h3>
+    <ul id="forecast" class="divide-y divide-gray-700">
+      
+      <li class="py-4 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <img src="images/sun.png" class="w-8 h-8" alt="Sunny" />
+          <span class="text-white text-sm">Monday</span>
+        </div>
+        <span class="text-white font-semibold">30°</span>
+      </li>
+
+      <li class="py-3 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <img src="images/cloudy.png" class="w-8 h-8" alt="Cloudy" />
+          <span class="text-white text-sm">Tuesday</span>
+        </div>
+        <span class="text-white font-semibold">25°</span>
+      </li>
+
+      <li class="py-3 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <img src="images/rain.png" class="w-8 h-8" alt="Rainy" />
+          <span class="text-white text-sm">Wednesday</span>
+        </div>
+        <span class="text-white font-semibold">18°</span>
+      </li>
+
+      <li class="py-3 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <img src="images/storm.png" class="w-8 h-8" alt="Storm" />
+          <span class="text-white text-sm">Thursday</span>
+        </div>
+        <span class="text-white font-semibold">20°</span>
+      </li>
+
+      <li class="py-3 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <img src="images/mist.png" class="w-8 h-8" alt="Partly Cloudy" />
+          <span class="text-white text-sm">Friday</span>
+        </div>
+        <span class="text-white font-semibold">29°</span>
+      </li>
+
+      <li class="py-3 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <img src="images/sun.png" class="w-8 h-8" alt="Sunny" />
+          <span class="text-white text-sm">Saturday</span>
+        </div>
+        <span class="text-white font-semibold">29°</span>
+      </li>
+
+      <li class="py-3 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <img src="images/sun.png" class="w-8 h-8" alt="Cloudy" />
+          <span class="text-white text-sm">Sunday</span>
+        </div>
+        <span class="text-white font-semibold">32°</span>
+      </li>
+
+    </ul>
+  </div>
+
+  <!-- Sunrise / Sunset Progress -->
+  <div class="bg-slate-800 rounded-2xl p-4">
+    <h3 class="text-lg font-bold mb-2 text-white">Day Progress</h3>
+    <div class="flex justify-between text-gray-400 text-sm mb-1">
+      <span id="sunrise">06:30 AM</span>
+      <span id="sunset">07:45 PM</span>
+    </div>
+    <div class="w-full bg-gray-700 h-2 rounded-full relative">
+      <!-- Progress -->
+      <div id="progress-bar" class="bg-yellow-400 h-2 rounded-full w-1/2"></div>
+      <!-- Sun Icon -->
+      <img id="sun-icon" src="images/sun.png" 
+          class="w-6 h-6 absolute -top-2 left-1/2 transform -translate-x-1/2" 
+          alt="Sun" />
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function updateDayProgress() {
+    const sunrise = new Date();
+    sunrise.setHours(6, 30, 0); // 6:30 AM
+
+    const sunset = new Date();
+    sunset.setHours(19, 45, 0); // 7:45 PM
+
+    const now = new Date();
+
+    const total = sunset - sunrise;
+    const passed = now - sunrise;
+    let percent = (passed / total) * 100;
+    percent = Math.max(0, Math.min(100, percent)); // clamp بين 0% و 100%
+
+    const progressBar = document.getElementById("progress-bar");
+    const sunIcon = document.getElementById("sun-icon");
+
+    progressBar.style.width = percent + "%";
+    sunIcon.style.left = percent + "%";
+  }
+
+  updateDayProgress();
+  setInterval(updateDayProgress, 60000); // يحدث كل دقيقة
+</script>
+
+
+
+  </main>
+  <script src="app.js"></script>
+
+</body>
+</html>

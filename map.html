@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Map</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body class="h-screen w-screen bg-slate-900 text-gray-400 flex">
+  <!-- Sidebar -->
+  <aside class="w-20 bg-slate-800 flex flex-col items-center py-4 space-y-4">
+    <!-- Logo -->
+    <div class="w-12 h-12">
+      <img src="images/logo.png" alt="Logo" class="w-full h-full object-contain">
+    </div>
+
+    <!-- Home -->
+    <a href="index.html" class="text-2xl hover:text-blue-400">
+      <i class="fa-solid fa-house "></i>
+      <p class="text-sm">Home</p>
+      </a>
+      
+    <!-- Cities -->
+    <a href="cities.html" class="text-2xl hover:text-blue-400">
+      <i class="fa-solid fa-city"></i>
+      <p class="text-sm">Cities</p>
+    </a>
+      
+    <!-- Map -->
+    <a href="map.html" class="text-2xl hover:text-blue-400">
+      <i class="fa-solid fa-map"></i>
+      <p class="text-sm">Map</p>
+    </a>
+      
+    <!-- Settings -->
+    <button class="text-2xl hover:text-blue-400">
+      <i class="fa-solid fa-gear"></i>
+      <p class="text-sm">Settings</p>
+    </button>
+  </aside>
+
+  <!-- Map -->
+  <div id="map" class="flex-1 h-full"></div>
+
+  <script>
+    // Initialize map
+    const map = L.map("map").setView([30.0444, 31.2357], 5); // Cairo default
+
+    // Add OpenStreetMap layer
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Marker
+    L.marker([30.0444, 31.2357]).addTo(map).bindPopup("Cairo").openPopup();
+  </script>
+</body>
+
+</html>
